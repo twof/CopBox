@@ -40,7 +40,7 @@ def relocate_file_locally(path):
                             os.path.split(path)[-1])
     print('Old path: %s, new path: %s' %(path, new_path))
     os.rename(path, new_path)
-    os.system(f"osascript /Users/fnord/Documents/AppleScript/CopBox/CLArguments.scpt {os.path.split(new_path)[0]} /Users/fnord/Documents/AppleScript/CopBox/CLFolderAction.scpt")
+    os.system(f"/usr/bin/osascript /Users/fnord/Documents/AppleScript/CopBox/CLArguments.scpt {os.path.split(new_path)[0]} /Users/fnord/Documents/AppleScript/CopBox/CLFolderAction.scpt")
 
 def relocate_file_remotely(path):
     raise NotImplementedError
