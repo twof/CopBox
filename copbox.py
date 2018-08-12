@@ -38,7 +38,7 @@ def random_walk(path, remaining_depth):
 def relocate_file_locally(path):
     new_path = os.path.join(choose_random_location(),
                             os.path.split(path)[-1])
-    print 'Old path: %s, new path: %s' %(path, new_path)
+    print('Old path: %s, new path: %s' %(path, new_path))
     os.rename(path, new_path)
 
 def relocate_file_remotely(path):
@@ -46,16 +46,16 @@ def relocate_file_remotely(path):
 
 def relocate_file(path):
     remote_file_threshhold = 0.1
-    if random.random() < remote_file_threshhold:
-        relocate_file_remotely(path)
-    else:
-        relocate_file_locally(path)
+#    if random.random() < remote_file_threshhold:
+#        relocate_file_remotely(path)
+#    else:
+    relocate_file_locally(path)
     
 
 if __name__ == '__main__':
     args = parser.parse_args()
     if args.random_location:
-        print choose_random_location()
+        print(choose_random_location())
     if args.relocate_file:
         relocate_file(args.relocate_file)
 
